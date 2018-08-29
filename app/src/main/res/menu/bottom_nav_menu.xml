@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/vital"
+        android:icon="@drawable/vital"
+        android:title="Vital" />
+
+    <item
+        android:id="@+id/mental"
+        android:icon="@drawable/mental"
+        android:title="Mental" />
+
+    <item
+        android:id="@+id/msg"
+        android:icon="@drawable/message"
+        android:title="Message" />
+
+    <item
+        android:id="@+id/people"
+        android:icon="@drawable/person_add"
+        android:title="People" />
+</menu>
