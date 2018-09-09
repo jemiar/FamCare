@@ -1,14 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MentalFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="MENTAL" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/moodlabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="MOOD" />
+
+        <TextView
+            android:id="@+id/moodleft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_below="@id/moodlabel"
+            android:text="1" />
+
+        <SeekBar
+            android:id="@+id/moodbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/moodlabel"
+            android:progressDrawable="@drawable/custom_seekbar"
+            android:thumb="@drawable/custom_thumb"
+            android:max="9"
+            android:min="0"
+            android:progress="0"/>
+
+        <TextView
+            android:id="@+id/moodright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/moodlabel"
+            android:text="10" />
+
+        <TextView
+            android:id="@+id/happy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/moodleft"
+            android:text="Happy" />
+
+        <TextView
+            android:id="@+id/sad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/moodright"
+            android:text="Sad" />
+
+        <TextView
+            android:id="@+id/anxietylabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/moodbar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="ANXIETY" />
+
+        <SeekBar
+            android:id="@+id/anxietybar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/anxietylabel"
+            android:progressDrawable="@drawable/custom_seekbar"
+            android:thumb="@drawable/custom_thumb"
+            android:max="9"
+            android:min="0"
+            android:progress="0"/>
+
+        <TextView
+            android:id="@+id/anxietyleft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_below="@id/anxietylabel"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/anxietyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/anxietylabel"
+            android:text="10" />
+
+        <TextView
+            android:id="@+id/calm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/anxietyleft"
+            android:text="Calm" />
+
+        <TextView
+            android:id="@+id/anxious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/anxietyright"
+            android:textAlignment="textEnd"
+            android:text="Very\nAnxious" />
+
+        <TextView
+            android:id="@+id/helplabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/anxietybar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="HELP" />
+
+        <SeekBar
+            android:id="@+id/helpbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/helplabel"
+            android:progressDrawable="@drawable/custom_seekbar"
+            android:thumb="@drawable/custom_thumb"
+            android:max="9"
+            android:min="0"
+            android:progress="0"/>
+
+        <TextView
+            android:id="@+id/helpleft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_below="@id/helplabel"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/helpright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/helplabel"
+            android:text="10" />
+
+        <TextView
+            android:id="@+id/noNeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/helpleft"
+            android:text="No\nNeed" />
+
+        <TextView
+            android:id="@+id/desparate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/helpright"
+            android:textAlignment="textEnd"
+            android:text="Desparate\nNeed" />
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/helpbar"
+            android:layout_marginTop="80dp"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginBottom="10dp"
+            android:background="#81d4fa"
+            android:text="Share with counselor" />
+    </RelativeLayout>
+</ScrollView>
