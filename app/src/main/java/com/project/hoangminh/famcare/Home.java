@@ -7,11 +7,13 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
 
 public class Home extends AppCompatActivity {
 
     BottomNavigationView nav;
-    ViewPager pager;
+    FamCareViewPager pager;
     MenuItem menuItem;
 
     @Override
@@ -20,7 +22,9 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         nav = (BottomNavigationView) findViewById(R.id.bottom_nav);
-        pager = (ViewPager) findViewById(R.id.pager);
+        pager = (FamCareViewPager) findViewById(R.id.pager);
+
+        pager.setEnable(false);
 
         nav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
