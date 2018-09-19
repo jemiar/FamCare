@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -20,6 +21,7 @@ public class MentalFragment extends Fragment {
 
     Button sendButton;
     SeekBar moodBar, anxietyBar, helpBar;
+    TextView moodValue, anxietyValue, helpValue;
 
     public MentalFragment() {
         // Required empty public constructor
@@ -37,13 +39,69 @@ public class MentalFragment extends Fragment {
         anxietyBar = (SeekBar) view.findViewById(R.id.anxietybar);
         helpBar = (SeekBar) view.findViewById(R.id.helpbar);
 
+        moodValue = (TextView) view.findViewById(R.id.moodvalue);
+        anxietyValue = (TextView) view.findViewById(R.id.anxietyvalue);
+        helpValue = (TextView) view.findViewById(R.id.helpvalue);
+
+        moodBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                String value = String.format("%.1f", ((float)i + 1) / 2);
+                moodValue.setText(value);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        anxietyBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                String value = String.format("%.1f", ((float)i + 1) / 2);
+                anxietyValue.setText(value);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        helpBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                String value = String.format("%.1f", ((float)i + 1) / 2);
+                helpValue.setText(value);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int moodValue = moodBar.getProgress() + 1;
-                int anxietyValue = anxietyBar.getProgress() + 1;
-                int helpValue = helpBar.getProgress() + 1;
-                String message = "Mood: " + moodValue + "\nAnxiety: " + anxietyValue + "\nHelp: " + helpValue + "\n";
+
+                String message = "Mood: " + moodValue.getText() + "\nAnxiety: " + anxietyValue.getText() + "\nHelp: " + helpValue.getText() + "\n\n";
 
                 String[] address = {"hhuynh20@uic.edu"};
 

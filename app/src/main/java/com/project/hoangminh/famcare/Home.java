@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -26,27 +27,34 @@ public class Home extends AppCompatActivity {
 
         pager.setEnable(false);
 
+        getSupportActionBar().setTitle("Vitals");
+
         nav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                ActionBar actionBar = getSupportActionBar();
                 switch (menuItem.getItemId()) {
                     case R.id.vital:
                         pager.setCurrentItem(0);
+                        actionBar.setTitle("Vitals");
                         break;
 
                     case R.id.mental:
                         pager.setCurrentItem(1);
+                        actionBar.setTitle("Mental Wellness Self Assessment");
                         break;
 
                     case R.id.msg:
                         pager.setCurrentItem(2);
+                        actionBar.setTitle("Messages");
                         break;
 
                     case R.id.people:
                         pager.setCurrentItem(3);
+                        actionBar.setTitle("Staffs");
                         break;
                 }
-                return false;
+                return true;
             }
         });
 
