@@ -43,7 +43,9 @@ public class Login extends AppCompatActivity {
 
     private void signIn(String em, String pw) {
         //Sign in with email and password
-        fcAuth.signInWithEmailAndPassword(em, pw)
+        //Change back to this statement when release
+        //fcAuth.signInWithEmailAndPassword(em, pw)
+        fcAuth.signInWithEmailAndPassword("abc@xyz.com", "12345678")
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
