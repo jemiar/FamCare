@@ -57,9 +57,5 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         FamCareMessage msgItem = dataSet.get(i);
         messageViewHolder.user.setText(msgItem.getUserName());
         messageViewHolder.content.setText(msgItem.getText());
-        Log.i("Add new message", msgItem.getText());
-        for(FamCareMessage fcm : dataSet) {
-            Log.i("Add new msg foreach", fcm.getText());
-        }
     }
 }
