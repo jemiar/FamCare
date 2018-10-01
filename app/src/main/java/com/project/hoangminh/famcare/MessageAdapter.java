@@ -2,6 +2,7 @@ package com.project.hoangminh.famcare;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,5 +57,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         FamCareMessage msgItem = dataSet.get(i);
         messageViewHolder.user.setText(msgItem.getUserName());
         messageViewHolder.content.setText(msgItem.getText());
+        Log.i("Add new message", msgItem.getText());
+        for(FamCareMessage fcm : dataSet) {
+            Log.i("Add new msg foreach", fcm.getText());
+        }
     }
 }
