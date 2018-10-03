@@ -45,6 +45,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         dataSet.add(m);
     }
 
+    //Inflate the View Holder
     @NonNull
     @Override
     public MessageViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -52,6 +53,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         return new MessageViewHolder(v);
     }
 
+    //Set value for the View Holder's Items
     @Override
     public void onBindViewHolder(@NonNull MessageViewHolder messageViewHolder, int i) {
         FamCareMessage msgItem = dataSet.get(i);

@@ -41,7 +41,7 @@ public class MessageFragment extends Fragment {
         // Required empty public constructor
     }
 
-
+    //Inflate View for the fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
