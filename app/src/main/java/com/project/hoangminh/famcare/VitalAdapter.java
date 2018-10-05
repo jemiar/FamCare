@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,7 @@ public class VitalAdapter extends RecyclerView.Adapter<VitalAdapter.VitalViewHol
         public TextView iDay;
         public TextView iTime;
         public ImageView iPic;
+        public View wholeView; //store the whole item row view, to attach onClick listener
 
         //Get hold of item in a view
         public VitalViewHolder(View v) {
@@ -31,6 +33,7 @@ public class VitalAdapter extends RecyclerView.Adapter<VitalAdapter.VitalViewHol
             iDay = (TextView) v.findViewById(R.id.day);
             iTime = (TextView) v.findViewById(R.id.time);
             iPic = (ImageView) v.findViewById(R.id.vitalIcon);
+            wholeView = v;
         }
     }
 
@@ -68,5 +71,21 @@ public class VitalAdapter extends RecyclerView.Adapter<VitalAdapter.VitalViewHol
         vitalViewHolder.iDay.setText(item.getDay());
         vitalViewHolder.iTime.setText(item.getTime());
         vitalViewHolder.iPic.setImageResource(item.getIconId());
+        //Set onClick listener on the whole row
+        vitalViewHolder.wholeView.setOnClickListener(new VitalItemClickListener(i));
+    }
+
+    //Inner class implement onclick listener on the whole view
+    //Tailoring with index variable to get the position of the item
+    private class VitalItemClickListener implements View.OnClickListener {
+        private int index;
+
+        public VitalItemClickListener(int i) {
+            index = i;
+        }
+        @Override
+        public void onClick(View view) {
+            Toast.makeText(view.getContext(), dataSet.get(index).getLabel(), Toast.LENGTH_SHORT).show();
+        }
     }
 }
