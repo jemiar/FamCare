@@ -27,31 +27,31 @@ public class Home extends AppCompatActivity {
 
         pager.setEnable(false);
 
-        getSupportActionBar().setTitle("Vitals");
+        //getSupportActionBar().setTitle("Vitals");
 
         nav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                ActionBar actionBar = getSupportActionBar();
+                //ActionBar actionBar = getSupportActionBar();
                 switch (menuItem.getItemId()) {
                     case R.id.vital:
                         pager.setCurrentItem(0);
-                        actionBar.setTitle("Vitals");
+                        //actionBar.setTitle("Vitals");
                         break;
 
                     case R.id.mental:
                         pager.setCurrentItem(1);
-                        actionBar.setTitle("Mental Wellness Self Assessment");
+                        //actionBar.setTitle("Mental Wellness Self Assessment");
                         break;
 
                     case R.id.msg:
                         pager.setCurrentItem(2);
-                        actionBar.setTitle("Messages");
+                        //actionBar.setTitle("Messages");
                         break;
 
                     case R.id.people:
                         pager.setCurrentItem(3);
-                        actionBar.setTitle("Staffs");
+                        //actionBar.setTitle("Staffs");
                         break;
                 }
                 return true;

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".VitalFragment">
-
+    tools:context=".VitalDetail">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:id="@+id/vitalTitle"
+        android:id="@+id/historyTitle"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true">
         <ImageView
@@ -45,47 +44,30 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_below="@id/fam"
-            android:text="Health Vitals"
+            android:text="Notes"
+            android:id="@+id/itemName"
             android:textColor="@color/white"
             android:layout_marginStart="10dp"
             android:layout_marginTop="15dp"
             android:textSize="40sp"
             android:textStyle="bold"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/white"
-            android:text="Updated on Oct. 10, 9:00 AM"/>
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:id="@+id/noteButton"
+            android:id="@+id/closeHistoryButton"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:clickable="true"
-            android:background="@drawable/note"/>
-
-        <TextView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:id="@+id/noti"
-            android:layout_alignTop="@id/noteButton"
-            android:layout_alignStart="@id/noteButton"
-            android:background="@drawable/circle"/>
+            android:background="@drawable/closebutton"/>
 
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/detailArea"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/vitalArea"
-        android:layout_below="@id/vitalTitle"
-        android:scrollbars="vertical" />
-</RelativeLayout>
+        android:scrollbars="vertical"/>
+</LinearLayout>
