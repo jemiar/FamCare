@@ -1,39 +1,51 @@
 package com.project.hoangminh.famcare;
 
+import android.content.Context;
+import android.graphics.PorterDuff;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.graphics.Color.BLACK;
+import static android.graphics.Color.WHITE;
+
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageViewHolder> {
 
     private List<FamCareMessage> dataSet;
+    //Need context to get the context of activity/fragment to get resources
+    private Context msgContext;
 
     public static class MessageViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView user;
+//        public TextView user;
         public TextView content;
 
         public MessageViewHolder(View v) {
             super(v);
-            user = (TextView) v.findViewById(R.id.user);
+//            user = (TextView) v.findViewById(R.id.user);
             content = (TextView) v.findViewById(R.id.content);
         }
 
     }
 
-    public MessageAdapter(List<FamCareMessage> ds) {
+    public MessageAdapter(List<FamCareMessage> ds, Context c) {
         dataSet = ds;
+        msgContext = c;
     }
 
-    public MessageAdapter() {
+    public MessageAdapter(Context c) {
         dataSet = new ArrayList<>();
+        msgContext = c;
     }
 
     @Override
@@ -57,7 +69,20 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     @Override
     public void onBindViewHolder(@NonNull MessageViewHolder messageViewHolder, int i) {
         FamCareMessage msgItem = dataSet.get(i);
-        messageViewHolder.user.setText(msgItem.getUserName());
+//        messageViewHolder.user.setText(msgItem.getUserName());
         messageViewHolder.content.setText(msgItem.getText());
+        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) messageViewHolder.content.getLayoutParams();
+        if(msgItem.getUserName().equals("Family")) {
+            messageViewHolder.content.setTextColor(msgContext.getResources().getColor(R.color.white));
+            messageViewHolder.content.setBackground(msgContext.getResources().getDrawable(R.drawable.msgshape));
+            messageViewHolder.content.getBackground().setColorFilter(msgContext.getResources().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_ATOP);
+            layoutParams.removeRule(RelativeLayout.ALIGN_PARENT_START);
+            layoutParams.addRule(RelativeLayout.ALIGN_PARENT_END);
+        } else {
+            messageViewHolder.content.setTextColor(BLACK);
+            messageViewHolder.content.getBackground().setColorFilter(msgContext.getResources().getColor(R.color.gray), PorterDuff.Mode.SRC_ATOP);
+            layoutParams.removeRule(RelativeLayout.ALIGN_PARENT_END);
+            layoutParams.addRule(RelativeLayout.ALIGN_PARENT_START);
+        }
     }
 }

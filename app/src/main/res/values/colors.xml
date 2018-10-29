@@ -7,4 +7,5 @@
     <color name="darkBlue">#1426ad</color>
     <color name="gray">#dbdcde</color>
     <color name="orange">#ffab40</color>
+    <color name="btnColor">#81d4fa</color>
 </resources>

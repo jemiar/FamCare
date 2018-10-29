@@ -44,11 +44,22 @@
             android:layout_alignParentStart="true"
             android:layout_below="@id/fam"
             android:text="Messages"
+            android:id="@+id/mTitle"
             android:textColor="@color/white"
             android:layout_marginStart="10dp"
             android:layout_marginTop="15dp"
             android:textSize="40sp"
             android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/mTitle"
+            android:text="to the bedside"
+            android:textColor="@color/white"
+            android:layout_marginStart="10dp"
+            android:textSize="20sp" />
 
     </RelativeLayout>
 
@@ -86,7 +97,8 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/msgshape"
+            android:backgroundTint="@color/btnColor"
             android:text="SEND" />
     </LinearLayout>
 

@@ -55,7 +55,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="50dp"
-            android:background="#81d4fa"
+            android:background="@drawable/msgshape"
+            android:backgroundTint="@color/btnColor"
             android:text="SIGN IN" />
 
         <TextView

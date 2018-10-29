@@ -86,7 +86,7 @@ public class MessageFragment extends Fragment {
         //New item is added from the the bottom of the recycler view
         msgLayoutManager.setStackFromEnd(true);
         msgArea.setLayoutManager(msgLayoutManager);
-        msgAdapter = new MessageAdapter();
+        msgAdapter = new MessageAdapter(getContext());
         msgArea.setAdapter(msgAdapter);
 
 
@@ -99,7 +99,7 @@ public class MessageFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 //Create new message
-                FamCareMessage msg = new FamCareMessage("John Doe", msgEdit.getText().toString());
+                FamCareMessage msg = new FamCareMessage("Family", msgEdit.getText().toString());
                 //Push to database
                 dbRef.push().setValue(msg);
                 //Reset the text input area
